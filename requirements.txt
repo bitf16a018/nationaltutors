@@ -1,0 +1,75 @@
+Homepage: (contains 2 options)
+-Request A tutor
+	explanation:
+		a client clicks the button "Request A tutor" and views a page
+		that lists all the verified tutors and a searching crieria as follows:
+		-search by expereince
+		-search by age
+		-search by gender
+		-search by class
+		-search by subjects
+		
+		after that he can click any of the tutor and can view the profile.
+		then there's a form opens with following information
+		-Name
+		-Email
+		-Phone
+		-Institute
+		-Classes
+		-Subjects
+		-Fee
+
+		then an email for verification is sent and if verified a conformation
+		message is sent either via email or phone
+
+-Sign up as tutor
+
+
+
+Client Requirements:
+Name*
+Email*
+Phone*
+Institute*
+Class*
+Detailed Subject(dropdown)*
+Fee Offered
+Time Slot(limited to 3 hours)
+------------------------------------
+Tutor Requirements:
+Full Name (profile pic)
+CNIC (pics pront n back)
+Father Name
+Current Address
+Permanent Address
+Phone
+Alternative Phone
+Email
+
+Qualification
+--Matriculation
+--Inetrmediate (add more qualifications)(academic docs from bachelors and all above)
+
+Teaching Experience
+Preferred Classes
+Preferred Subjects
+Areas to Teach
+
+Terms And Condition
+
+
+------------------------------------
+Admin Requirements:
+2 Panels
+-Client
+--Unread Requests
+--Tutors Assigned
+
+-Tutor
+--Unverifed tutors
+--Verified Tutors
+--Assigned to Clients
+
+Abilities to:
+-delete a client request
+-delete a tutor
