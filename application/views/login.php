@@ -16,13 +16,13 @@
 				</div>
 				<div class="form-group form-check">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox"> Remember me
+						<input class="form-check-input" type="checkbox"> Abc
 					</label>
 				</div>
 				<button type="submit" class="btn btn-block btn-primary">Submit</button>
 			</form>		
 		</div>
-
+ 
 		<div class="col-xl"></div>
 	</div>
 </div>
