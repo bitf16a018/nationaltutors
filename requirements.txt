@@ -32,13 +32,14 @@ Email*
 Phone*
 Institute*
 Class*
-Detailed Subject(dropdown)*
-Fee Offered
-Time Slot(limited to 3 hours)
-------------------------------------
+Subject Details(dropdown)*
+Fee Offered----------------------->cleared
+Time Slot(limited to 3 hours)-------------------->Doubtfull
+------------------------------------------------------------------
 Tutor Requirements:
 Full Name (profile pic)
 CNIC (pics pront n back)
+City--(Aziz added it)
 Father Name
 Current Address
 Permanent Address
