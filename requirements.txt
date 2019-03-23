@@ -2,7 +2,7 @@ Homepage: (contains 2 options)
 -Request A tutor
 	explanation:
 		a client clicks the button "Request A tutor" and views a page
-		that lists all the verified tutors and a searching crieria as follows:
+		that lists all the verified tutors and a searching criteria as follows:
 		-search by expereince
 		-search by age
 		-search by gender
@@ -33,8 +33,8 @@ Phone*
 Institute*
 Class*
 Subject Details(dropdown)*
-Fee Offered----------------------->cleared
-Time Slot(limited to 3 hours)-------------------->Doubtfull
+Fee Offered
+Time Slot(limited to 3 hours)
 ------------------------------------------------------------------
 Tutor Requirements:
 Full Name (profile pic)

@@ -5,33 +5,97 @@
 <title>Login | National Tutors</title>
 <?php endblock();?>
 
-<?php startblock('styles');?>
-<link rel="stylesheet" href="<?php echo base_url('assets/css/custom_styles.css');?>">
-<?php endblock();?>
-
 <?php startblock("body") ?>
-<div class="container">
+<!-- start Container Wrapper -->
+<div class="container-wrapper">
 
-	<div class="row" style="margin-top: 10%;">
-		<div class="col-xl"></div>
+	<!-- start Header -->
+	<?php include 'header.php';?>
+	<!-- end Header -->
 
-		<div class="col-xl">
-			<h3>Login to National Tutors</h3>
-			<form action="<?php site_url('home');?>">
-				<div class="form-group">
-					<label for="email">Email address:</label>
-					<input type="email" class="form-control" id="email">
+	<!-- start Main Wrapper -->
+	<div class="main-wrapper scrollspy-container">
+
+		<div class="contact-page-wrapper">
+			
+			<div class="container">
+
+				<div class="contact-map">
+
+					<div class="row">
+
+						<div class="col-sm-7 col-md-6 col-md-offset-1 mb-30">
+							
+							<form class="contact-form-wrapper" data-toggle="validator">
+								
+								<div class="row">
+									
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputName">Your Name <span class="font10 text-danger">(required)</span></label>
+											<input id="inputName" type="text" class="form-control" data-error="Your name is required" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">Your Email <span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label>Subject</label>
+											<input type="text" class="form-control" />
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputMessage">Message <span class="font10 text-danger">(required)</span></label>
+											<textarea id="inputMessage" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" required></textarea>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										<button type="submit" class="btn btn-primary mt-5">Send Message</button>
+									</div>
+
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+					
 				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd">
-				</div>
-				<button type="submit" class="btn btn-block btn-primary">Submit</button>
-			</form>		
+
+			</div>
+
 		</div>
 
-		<div class="col-xl"></div>
 	</div>
-</div>
+	<!-- end Main Wrapper -->
 
-<?php endblock(); ?>
+	<!-- start Footer Wrapper -->
+	<?php include 'footer.php' ?>
+	<!-- end Footer Wrapper -->
+
+</div>
+<!-- end Container Wrapper -->
+
+
+<?php endblock();?>

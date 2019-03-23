@@ -5,66 +5,220 @@
 <title>Tutor Register | National Tutors</title>
 <?php endblock();?>
 
-<?php startblock('styles');?>
-<link rel="stylesheet" href="<?php echo base_url('assets/css/custom_styles.css');?>">
-<?php endblock();?>
-
 <?php startblock("body") ?>
-<div class="container">
+<!-- start Container Wrapper -->
+<div class="container-wrapper">
 
-	<div class="row" style="margin-top: 10%;">
-		<div class="col-xl"></div>
+	<!-- start Header -->
+	<?php include 'header.php';?>
+	<!-- end Header -->
 
-		<div class="col-xl">
-			<h3>Register to National Tutors</h3>
-			<form action="<?php site_url('home');?>">
-				<div class="form-group">
-					<label for="name">Name:</label>
-					<input type="text" class="form-control" id="name" name="name">
+	<!-- start Main Wrapper -->
+	<div class="main-wrapper scrollspy-container">
+
+		<div class="contact-page-wrapper">
+			
+			<div class="container">
+
+				<div class="contact-map">
+
+					<div class="row">
+
+						<form class="contact-form-wrapper" data-toggle="validator">
+							<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
+
+								
+								<div class="row">
+									
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputName">Your Name <span class="font10 text-danger">(required)</span></label>
+											<input id="inputName" type="text" class="form-control" data-error="Your name is required" required>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">Your Email <span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+									
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputName">Father Name <span class="font10 text-danger">(required)</span></label>
+											<input id="inputName" type="text" class="form-control" data-error="Your name is required" required>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">Your CNIC <span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">City<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">Phone<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+
+
+									<div class="col-sm-6">
+										
+										<div class="form-group">
+											<label for="inputEmail">Alternative Phone<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputMessage">Permanent Address<span class="font10 text-danger">(required)</span></label>
+											<textarea id="inputMessage" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" required></textarea>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputMessage">Mailing Address <span class="font10 text-danger">(required)</span></label>
+											<textarea id="inputMessage" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" required></textarea>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+							<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
+
+								
+								<div class="row">
+									
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputName">Teacing Experience Level (1-5)<span class="font10 text-danger">(required)</span></label>
+											<select class="form-control">
+												<option>1 (no experience)</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5 (expert)</option>
+											</select>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputEmail">Preffered Classes<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputEmail">Preffered Subjects<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										
+										<div class="form-group">
+											<label for="inputEmail">Preffered Areas<span class="font10 text-danger">(required)</span></label>
+											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+									</div>
+
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="exampleFormControlFile1">Attach your Documents</label>
+											<input multiple="multiple" type="file" class="form-control-file" id="exampleFormControlFile1">
+										</div>
+									</div>
+
+									<div class="col-sm-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+											<label class="form-check-label" for="defaultCheck1">
+												Default checkbox
+											</label>
+										</div>
+									</div>
+
+									<div class="col-sm-12">
+										<button type="submit" class="btn btn-primary mt-5">Register</button>
+									</div>
+
+								</div>
+
+
+							</div>
+
+
+
+
+
+						</div>
+
+					</div>
+
 				</div>
-				<div class="form-group">
-					<label for="email">Email:</label>
-					<input type="email" class="form-control" id="email" name="email">
-				</div>
-				<div class="form-group">
-					<label for="cnic">CNIC:</label>
-					<input type="number" class="form-control" id="cnic" name="cnic">
-				</div>
-				<div class="form-group">
-					<label for="fname">Father Name:</label>
-					<input type="text" class="form-control" id="fname" name="fname">
-				</div>
-				<div class="form-group">
-					<label for="city">City:</label>
-					<input type="text" class="form-control" id="city" name="city">
-				</div>
-				<div class="form-group">
-					<label for="caddress">Current Address:</label>
-					<input type="text" class="form-control" id="caddress" name="caddress">
-				</div>
-				<div class="form-group">
-					<label for="paddress">Permanent Address:</label>
-					<input type="text" class="form-control" id="paddress" name="paddress">
-				</div>
-				<div class="form-group">
-					<label for="phone">Phone:</label>
-					<input type="number" class="form-control" id="phone" name="phone">
-				</div>
-				<div class="form-group">
-					<label for="aphone">Alternative Phone:</label>
-					<input type="number" class="form-control" id="aphone" name="aphone">
-				</div>
-				<div class="form-group form-check">
-					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox"> Agree to Terms and Conditions.
-					</label>
-				</div>
-				<button type="submit" class="btn btn-block btn-primary">Submit</button>
-			</form>	
+
+			</div>
+
 		</div>
+		<!-- end Main Wrapper -->
 
-		<div class="col-xl"></div>
+		<!-- start Footer Wrapper -->
+		<?php include 'footer.php' ?>
+		<!-- end Footer Wrapper -->
+
 	</div>
-</div>
+	<!-- end Container Wrapper -->
 
-<?php endblock(); ?>
+
+	<?php endblock();?>

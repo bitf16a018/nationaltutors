@@ -1,0 +1,617 @@
+@font-face {
+	font-family education-icon;
+	src url(education-icon.eot);
+	src url(education-icon.eot#iefix) format(embedded-opentype),
+	url(education-icon.woff) format(woff),
+	url(education-icon.ttf) format(truetype),
+	url(education-icon.svg) format(svg);
+	font-weight normal;
+	font-style normal;
+}
+[class^=education-icon-]before, [class= education-icon-]before,
+[class^=education-icon-]after, [class= education-icon-]after {   
+	font-family education-icon;
+	display inline-block;
+  font normal normal normal 14px1 education-icon;
+  font-size inherit;
+  text-rendering auto;
+  -webkit-font-smoothing antialiased;
+  -moz-osx-font-smoothing grayscale;
+  transform translate(0, 0);
+}.education-icon-30before {
+	content e000;
+}
+.education-icon-45before {
+	content e001;
+}
+.education-icon-601before {
+	content e002;
+}
+.education-icon-a1before {
+	content e003;
+}
+.education-icon-a2before {
+	content e004;
+}
+.education-icon-a3before {
+	content e005;
+}
+.education-icon-abacusbefore {
+	content e006;
+}
+.education-icon-academicbefore {
+	content e007;
+}
+.education-icon-adn1before {
+	content e008;
+}
+.education-icon-alarm1before {
+	content e009;
+}
+.education-icon-alphabet1before {
+	content e00a;
+}
+.education-icon-alphabet2before {
+	content e00b;
+}
+.education-icon-amountbefore {
+	content e00c;
+}
+.education-icon-application5before {
+	content e00d;
+}
+.education-icon-audio7before {
+	content e00e;
+}
+.education-icon-audiobookbefore {
+	content e00f;
+}
+.education-icon-avi1before {
+	content e010;
+}
+.education-icon-b4before {
+	content e011;
+}
+.education-icon-b5before {
+	content e012;
+}
+.education-icon-backpackbefore {
+	content e013;
+}
+.education-icon-bagbefore {
+	content e014;
+}
+.education-icon-big52before {
+	content e015;
+}
+.education-icon-big55before {
+	content e016;
+}
+.education-icon-big56before {
+	content e017;
+}
+.education-icon-big57before {
+	content e018;
+}
+.education-icon-book10before {
+	content e019;
+}
+.education-icon-book11before {
+	content e01a;
+}
+.education-icon-book12before {
+	content e01b;
+}
+.education-icon-book13before {
+	content e01c;
+}
+.education-icon-book14before {
+	content e01d;
+}
+.education-icon-book15before {
+	content e01e;
+}
+.education-icon-book7before {
+	content e01f;
+}
+.education-icon-book8before {
+	content e020;
+}
+.education-icon-book9before {
+	content e021;
+}
+.education-icon-brain2before {
+	content e022;
+}
+.education-icon-briefcase2before {
+	content e023;
+}
+.education-icon-brush6before {
+	content e024;
+}
+.education-icon-bulb1before {
+	content e025;
+}
+.education-icon-bulkbefore {
+	content e026;
+}
+.education-icon-calendar5before {
+	content e027;
+}
+.education-icon-calendar6before {
+	content e028;
+}
+.education-icon-canvasbefore {
+	content e029;
+}
+.education-icon-cdbefore {
+	content e02a;
+}
+.education-icon-certificate2before {
+	content e02b;
+}
+.education-icon-certificate3before {
+	content e02c;
+}
+.education-icon-certificatebefore {
+	content e02d;
+}
+.education-icon-checkeredbefore {
+	content e02e;
+}
+.education-icon-chemicalbefore {
+	content e02f;
+}
+.education-icon-chemistrybefore {
+	content e030;
+}
+.education-icon-cinema2before {
+	content e031;
+}
+.education-icon-cinema3before {
+	content e032;
+}
+.education-icon-clock4before {
+	content e033;
+}
+.education-icon-clock5before {
+	content e034;
+}
+.education-icon-competitionbefore {
+	content e035;
+}
+.education-icon-computer12before {
+	content e036;
+}
+.education-icon-correct2before {
+	content e037;
+}
+.education-icon-crechebefore {
+	content e038;
+}
+.education-icon-curriculumbefore {
+	content e039;
+}
+.education-icon-deletedbefore {
+	content e03a;
+}
+.education-icon-desktopbefore {
+	content e03b;
+}
+.education-icon-diary1before {
+	content e03c;
+}
+.education-icon-document5before {
+	content e03d;
+}
+.education-icon-document6before {
+	content e03e;
+}
+.education-icon-dotplotbefore {
+	content e03f;
+}
+.education-icon-download4before {
+	content e040;
+}
+.education-icon-download8before {
+	content e041;
+}
+.education-icon-drawbefore {
+	content e042;
+}
+.education-icon-earth2before {
+	content e043;
+}
+.education-icon-education1before {
+	content e044;
+}
+.education-icon-education2before {
+	content e045;
+}
+.education-icon-education3before {
+	content e046;
+}
+.education-icon-educational1before {
+	content e047;
+}
+.education-icon-educationalbefore {
+	content e048;
+}
+.education-icon-educationbefore {
+	content e049;
+}
+.education-icon-encyclopediabefore {
+	content e04a;
+}
+.education-icon-favorite5before {
+	content e04b;
+}
+.education-icon-fifteenbefore {
+	content e04c;
+}
+.education-icon-file3before {
+	content e04d;
+}
+.education-icon-filingbefore {
+	content e04e;
+}
+.education-icon-first4before {
+	content e04f;
+}
+.education-icon-first5before {
+	content e050;
+}
+.education-icon-flag4before {
+	content e051;
+}
+.education-icon-football1before {
+	content e052;
+}
+.education-icon-foreignbefore {
+	content e053;
+}
+.education-icon-formsbefore {
+	content e054;
+}
+.education-icon-geographybefore {
+	content e055;
+}
+.education-icon-glasses1before {
+	content e056;
+}
+.education-icon-glassesbefore {
+	content e057;
+}
+.education-icon-graphbefore {
+	content e058;
+}
+.education-icon-guitarbefore {
+	content e059;
+}
+.education-icon-handbefore {
+	content e05a;
+}
+.education-icon-hierarchicalbefore {
+	content e05b;
+}
+.education-icon-homeworkbefore {
+	content e05c;
+}
+.education-icon-icloud1before {
+	content e05d;
+}
+.education-icon-icloudbefore {
+	content e05e;
+}
+.education-icon-imagesbefore {
+	content e05f;
+}
+.education-icon-information2before {
+	content e060;
+}
+.education-icon-injectionbefore {
+	content e061;
+}
+.education-icon-insigniabefore {
+	content e062;
+}
+.education-icon-ipadbefore {
+	content e063;
+}
+.education-icon-keyboard2before {
+	content e064;
+}
+.education-icon-leaf4before {
+	content e065;
+}
+.education-icon-lecture1before {
+	content e066;
+}
+.education-icon-lecturebefore {
+	content e067;
+}
+.education-icon-librarybefore {
+	content e068;
+}
+.education-icon-looking1before {
+	content e069;
+}
+.education-icon-looking2before {
+	content e06a;
+}
+.education-icon-lookbefore {
+	content e06b;
+}
+.education-icon-magnet2before {
+	content e06c;
+}
+.education-icon-mail4before {
+	content e06d;
+}
+.education-icon-mathematical1before {
+	content e06e;
+}
+.education-icon-mathematicalbefore {
+	content e06f;
+}
+.education-icon-measurebefore {
+	content e070;
+}
+.education-icon-measuringbefore {
+	content e071;
+}
+.education-icon-meetingbefore {
+	content e072;
+}
+.education-icon-microscopebefore {
+	content e073;
+}
+.education-icon-molecules1before {
+	content e074;
+}
+.education-icon-mouse2before {
+	content e075;
+}
+.education-icon-museum2before {
+	content e076;
+}
+.education-icon-music12before {
+	content e077;
+}
+.education-icon-music13before {
+	content e078;
+}
+.education-icon-necktiebefore {
+	content e079;
+}
+.education-icon-new5before {
+	content e07a;
+}
+.education-icon-numbersbefore {
+	content e07b;
+}
+.education-icon-olympicbefore {
+	content e07c;
+}
+.education-icon-online1before {
+	content e07d;
+}
+.education-icon-online2before {
+	content e07e;
+}
+.education-icon-onlinebefore {
+	content e07f;
+}
+.education-icon-open14before {
+	content e080;
+}
+.education-icon-paper9before {
+	content e081;
+}
+.education-icon-paperclipbefore {
+	content e082;
+}
+.education-icon-paragraph9before {
+	content e083;
+}
+.education-icon-pdf2before {
+	content e084;
+}
+.education-icon-pdfbefore {
+	content e085;
+}
+.education-icon-pen22before {
+	content e086;
+}
+.education-icon-pencil7before {
+	content e087;
+}
+.education-icon-pencil8before {
+	content e088;
+}
+.education-icon-physicalbefore {
+	content e089;
+}
+.education-icon-physicsbefore {
+	content e08a;
+}
+.education-icon-picture5before {
+	content e08b;
+}
+.education-icon-pie3before {
+	content e08c;
+}
+.education-icon-pillarbefore {
+	content e08d;
+}
+.education-icon-placardbefore {
+	content e08e;
+}
+.education-icon-planet1before {
+	content e08f;
+}
+.education-icon-play6before {
+	content e090;
+}
+.education-icon-play7before {
+	content e091;
+}
+.education-icon-protractorbefore {
+	content e092;
+}
+.education-icon-pushpinbefore {
+	content e093;
+}
+.education-icon-qbefore {
+	content e094;
+}
+.education-icon-quarterbefore {
+	content e095;
+}
+.education-icon-researchbefore {
+	content e096;
+}
+.education-icon-robot3before {
+	content e097;
+}
+.education-icon-rubber3before {
+	content e098;
+}
+.education-icon-schedulebefore {
+	content e099;
+}
+.education-icon-school1before {
+	content e09a;
+}
+.education-icon-school4before {
+	content e09b;
+}
+.education-icon-school6before {
+	content e09c;
+}
+.education-icon-school7before {
+	content e09d;
+}
+.education-icon-schoolclassbefore {
+	content e09e;
+}
+.education-icon-science1before {
+	content e09f;
+}
+.education-icon-science2before {
+	content e0a0;
+}
+.education-icon-sciencebefore {
+	content e0a1;
+}
+.education-icon-set1before {
+	content e0a2;
+}
+.education-icon-shakebefore {
+	content e0a3;
+}
+.education-icon-shelfbefore {
+	content e0a4;
+}
+.education-icon-shopping7before {
+	content e0a5;
+}
+.education-icon-signature2before {
+	content e0a6;
+}
+.education-icon-small53before {
+	content e0a7;
+}
+.education-icon-small54before {
+	content e0a8;
+}
+.education-icon-smartphone2before {
+	content e0a9;
+}
+.education-icon-smartphonebefore {
+	content e0aa;
+}
+.education-icon-stagebefore {
+	content e0ab;
+}
+.education-icon-stepsbefore {
+	content e0ac;
+}
+.education-icon-stethoscope2before {
+	content e0ad;
+}
+.education-icon-studentbefore {
+	content e0ae;
+}
+.education-icon-tablebefore {
+	content e0af;
+}
+.education-icon-tablet2before {
+	content e0b0;
+}
+.education-icon-tactil1before {
+	content e0b1;
+}
+.education-icon-talkingbefore {
+	content e0b2;
+}
+.education-icon-teacherbefore {
+	content e0b3;
+}
+.education-icon-teachbefore {
+	content e0b4;
+}
+.education-icon-telescopebefore {
+	content e0b5;
+}
+.education-icon-the25before {
+	content e0b6;
+}
+.education-icon-thoughtbefore {
+	content e0b7;
+}
+.education-icon-time2before {
+	content e0b8;
+}
+.education-icon-uniformbefore {
+	content e0b9;
+}
+.education-icon-university1before {
+	content e0ba;
+}
+.education-icon-university2before {
+	content e0bb;
+}
+.education-icon-universitybefore {
+	content e0bc;
+}
+.education-icon-unknown1before {
+	content e0bd;
+}
+.education-icon-unknownbefore {
+	content e0be;
+}
+.education-icon-virusbefore {
+	content e0bf;
+}
+.education-icon-wagonbefore {
+	content e0c0;
+}
+.education-icon-wall3before {
+	content e0c1;
+}
+.education-icon-window10before {
+	content e0c2;
+}
+.education-icon-window11before {
+	content e0c3;
+}
+.education-icon-window8before {
+	content e0c4;
+}
+.education-icon-window9before {
+	content e0c5;
+}
+.education-icon-working1before {
+	content e0c6;
+}
