@@ -42,7 +42,7 @@ require_once 'template_module.php';
 	<?php startblock('styles');?>
 	<?php endblock();?>
 </head>
-<body class="stylish-background">
+<body>
 	<?php startblock('body');?>
 	<?php endblock();?>
 
