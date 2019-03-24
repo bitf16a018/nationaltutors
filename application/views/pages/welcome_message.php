@@ -1,5 +1,0 @@
-<div id="container">
-
-	<h1>Welcome Home!</h1>
-
-</div>

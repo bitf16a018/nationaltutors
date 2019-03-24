@@ -16,5 +16,4 @@ class Tutor extends CI_Controller {
 
 		$this->load->view('pages/tutor_registeration');
 	}
-
 }
