@@ -13,7 +13,7 @@
 							<a href="#home"><i class="education-icon-book7"></i> National<strong class="uppercase">Tutors</strong></a>
 						</div>
 
-						<p class="about-us-footer">We provide country's best tutors to educate the Students. Abilities or he perfectly pretended so strangers be exquisite. Oh to another chamber pleased imagine do in.</p>
+						
 
 					</div>
 

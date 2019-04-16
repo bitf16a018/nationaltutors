@@ -13,7 +13,7 @@
 
 						<div class="col-sm-6">
 
-							<div class="top-header-widget">
+							<!-- <div class="top-header-widget">
 								<ul >
 									<li>
 										<a href="#">
@@ -21,17 +21,11 @@
 										</a>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 
 						</div>
 
 						<div class="col-sm-6">
-
-							<div class="top-header-widget pull-right">
-								<a href="#" class="btn-ajax-login" data-toggle="modal">
-									Resgister
-								</a>
-							</div>
 							<div class="top-header-widget pull-right">
 								<a href="#" class="btn-ajax-register" data-toggle="modal">
 									Login

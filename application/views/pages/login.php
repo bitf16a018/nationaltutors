@@ -24,54 +24,51 @@
 
 					<div class="row">
 
-						<div class="col-sm-7 col-md-6 col-md-offset-1 mb-30">
+						<div class="col-sm-12 col-md-11 col-md-offset-1 mb-30">
 							
-							<form class="contact-form-wrapper" data-toggle="validator">
+								<?php echo form_open('Login/servlet','data-toggle="validator" class="contact-form-wrapper" id="login_from" method="post" ');?>
 								
 								<div class="row">
 									
-									<div class="col-sm-6">
-										
+									<div class="col-sm-4"></div>
+									<div class="col-sm-4">
+										<span class="font12 text-danger">
+											<?php 
+												if(isset($login_error)){
+													echo $login_error;
+												}
+											?>
+										</span>
 										<div class="form-group">
-											<label for="inputName">Your Name <span class="font10 text-danger">(required)</span></label>
-											<input id="inputName" type="text" class="form-control" data-error="Your name is required" required>
+											<label for="inputEmail">
+												Email <span class="font10 text-danger">(required)</span>
+											</label>
+											<input type="email" name="email" class="form-control" required="">
 											<div class="help-block with-errors"></div>
 										</div>
 
-									</div>
 
-									<div class="col-sm-6">
-										
 										<div class="form-group">
-											<label for="inputEmail">Your Email <span class="font10 text-danger">(required)</span></label>
-											<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+											<label for="inputName">
+												Password<span class="font10 text-danger">(required)</span>
+											</label>
+											<input type="password" name="password" class="form-control" >
 											<div class="help-block with-errors"></div>
 										</div>
 
-									</div>
-
-									<div class="col-sm-12">
-										
 										<div class="form-group">
-											<label>Subject</label>
-											<input type="text" class="form-control" />
+											<input type="submit" class="btn btn-primary btn-lg btn-block" value="Login" required="">
 										</div>
+										<p>Don't have an acocunt? 
+											<a href="#" class="btn-ajax-register" data-toggle="modal">
+												Register
+											</a>
+										here!</p>
 
 									</div>
+									<div class="col-sm-4"></div>
 
-									<div class="col-sm-12">
-										
-										<div class="form-group">
-											<label for="inputMessage">Message <span class="font10 text-danger">(required)</span></label>
-											<textarea id="inputMessage" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" required></textarea>
-											<div class="help-block with-errors"></div>
-										</div>
 
-									</div>
-
-									<div class="col-sm-12">
-										<button type="submit" class="btn btn-primary mt-5">Send Message</button>
-									</div>
 
 								</div>
 
@@ -80,7 +77,7 @@
 						</div>
 
 					</div>
-					
+
 				</div>
 
 			</div>
