@@ -1,0 +1,11 @@
+http://localhost/nationaltutors/
+
+http://localhost/nationaltutors/index.php/AdminPanel
+
+http://localhost/nationaltutors/index.php/login
+
+http://localhost/nationaltutors/index.php/tutor
+
+http://localhost/nationaltutors/index.php/tutor/register
+
+http://localhost/nationaltutors/index.php/home/find_tutor
