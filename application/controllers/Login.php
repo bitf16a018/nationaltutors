@@ -9,6 +9,7 @@ class Login extends CI_Controller
 		$this->load->helper("form");
 
 	}
+	
 	public function index()
 	{
 			$this->load->view('pages/login');
