@@ -8,7 +8,7 @@
 
 <?php startblock('styles');?>
 <style type="text/css">
-	input[type='checkbox']{
+	input[type='checkbox'], input[type='radio']{
 		display: block;
 		opacity: 1;
 	}
@@ -114,6 +114,15 @@
 
 								<div class="col-sm-6">
 									<div class="form-group">
+										<label for="inputEmail">Gender<span class="font10 text-danger">(required)</span></label><br>
+										<input type="radio" value="1" name="gender" id="male-gender"><label for="male-gender">Male</label><br>
+										<input type="radio" value="0" name="gender" id="female-gender"><label for="female-gender">Female</label>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
 										<label for="inputEmail">City<span class="font10 text-danger">(required)</span></label>
 										<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" >
 										<div class="help-block with-errors"></div>
@@ -121,13 +130,11 @@
 								</div>
 
 								<div class="col-sm-12">
-
 									<div class="form-group">
 										<label for="inputMessage">Permanent Address<span class="font10 text-danger">(required)</span></label>
 										<textarea id="inputMessage" class="form-control" rows="8" data-minlength="50" data-error="Your message is required and must not less than 50 characters" ></textarea>
 										<div class="help-block with-errors"></div>
 									</div>
-
 								</div>
 
 								<div class="col-sm-12">
@@ -145,8 +152,25 @@
 						</div>
 						<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
 
-
 							<div class="row">
+
+
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="inputEmail">Password <span class="font10 text-danger">(required)</span></label>
+										<input id="inputEmail" type="password" class="form-control">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="inputEmail">Confirm Password<span class="font10 text-danger">(required)</span></label>
+										<input id="inputEmail" type="password" class="form-control">
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
 
 								<div class="col-sm-12">
 
@@ -217,7 +241,16 @@
 
 								
 								
-								<div class="col-sm-12" id="attach-documents-div">
+								<div class="col-sm-6">
+
+									<div class="form-group">
+										<label for="exampleFormControlFile1">Attach your Profile Pic</label>
+										<input multiple="multiple" type="file" class="form-control-file">
+									</div>
+
+								</div>
+
+								<div class="col-sm-6" id="attach-documents-div">
 
 									<div class="form-group">
 										<label for="exampleFormControlFile1">Attach your Documents</label>
