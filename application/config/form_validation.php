@@ -24,7 +24,20 @@ $config = array(
 			'errors' => array(
 				'required' => 'You must provide a %s.',
 			),
-		),
+		),/*
+		array(
+			'field' => 'cnic-pic-1',
+			'label' => 'CNIC Frontside Pic',
+			'rules' => 'callback_validate_CNIC_pic_1'
+		),/*
+		array(
+			'field' => 'cnic-pic-2',
+			'label' => 'CNIC Backside Pic',
+			'rules' => 'trim|required',
+			'errors' => array(
+				'required' => 'You must provide your %s.',
+			),
+		),*/
 		array(
 			'field' => 'termsandconditions',
 			'label' => 'Terms and Conditions',

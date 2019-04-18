@@ -97,16 +97,23 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label >Attach CNIC Frontside Pic.</label>
-											<input type="file" class="form-control-file" name="cnic-pic-1" value="<?php echo set_value('cnic-pic-1'); ?>">
-											<div class="font10 text-danger"></div>
+											<label >Attach CNIC Frontside Pic.<span class="font10 text-danger">(required)</span></label>
+											<input type="file" class="form-control-file" name="cnic-pic-1">
+											<div class="font10 text-danger">
+												<?php 
+												if(isset($cnic_pic_1_errors))
+													print_r($cnic_pic_1_errors);
+												?>
+											</div>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label for="exampleFormControlFile1">Attach CNIC Backside Pic.</label>
-											<input type="file" class="form-control-file" name="cnic-pic-2" value="<?php echo set_value('cnic-pic-2'); ?>">
-											<div class="font10 text-danger"></div>
+											<label>Attach CNIC Backside Pic.<span class="font10 text-danger">(required)</span></label>
+											<input type="file" class="form-control-file" name="cnic-pic-2">
+											<div class="font10 text-danger">
+												<?php //if(form_error('cnic-pic-2')) echo '*'.form_error('cnic-pic-2');?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -140,10 +147,10 @@
 											<label>Gender<span class="font10 text-danger">(required)</span></label><br>
 
 											<label>
-												<input type="radio" value="1" name="gender" id="male-gender" value="<?php echo set_radio('gender','1'); ?>">Male
+												<input type="radio" value="1" name="gender" id="male-gender" <?php echo set_radio('gender','1');?>>Male
 											</label>
 											<label>
-												<input type="radio" value="0" name="gender" id="female-gender" value="<?php echo set_radio('gender','0'); ?>">Female
+												<input type="radio" value="0" name="gender" id="female-gender" <?php echo set_radio('gender','0');?>>Female
 											</label>
 
 											<div class="font10 text-danger">
@@ -176,7 +183,7 @@
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="inputMessage">Mailing Address <span class="font10 text-danger">(required)</span></label>
-											<textarea value="<?php echo set_value('maddress'); ?>" name="maddress" class="form-control" rows="2" minlength="20" maxlength="200"></textarea>
+											<textarea name="maddress" class="form-control" rows="2" minlength="20" maxlength="200"><?php echo set_value('maddress'); ?></textarea>
 											<div class="font10 text-danger">
 												<?php if(form_error('maddress')) echo '*'.form_error('maddress');?>
 											</div>
@@ -188,7 +195,7 @@
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="inputMessage">Permanent Address<span class="font10 text-danger">(required)</span></label>
-											<textarea value="<?php echo set_value('paddress'); ?>" name="paddress" class="form-control" rows="2" minlength="20" maxlength="200"></textarea>
+											<textarea name="paddress" class="form-control" rows="2" minlength="20" maxlength="200"><?php echo set_value('paddress'); ?></textarea>
 											<div class="font10 text-danger">
 												<?php if(form_error('paddress')) echo '*'.form_error('paddress');?>
 											</div>
@@ -205,7 +212,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label for="inputEmail">Password <span class="font10 text-danger">(required)</span></label>
-											<input type="password" value="<?php echo set_value('password'); ?>" class="form-control" name="password">
+											<input type="password" title="Your Password must contain atleast one lowercase, one uppercase, one digit and one special character(!@#$&*)." value="<?php echo set_value('password'); ?>" class="form-control" name="password">
 											<div class="font10 text-danger">
 												<?php if(form_error('password')) echo '*'.form_error('password');?>
 											</div>
@@ -290,7 +297,8 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<label>
-											<input type="checkbox" value="agree" name="termsandconditions" id="terms-and-conditins-check" style="display: block; opacity: 1;">Agree to Terms and Conditions.
+											<?php echo form_checkbox('termsandconditions', '1', set_checkbox('termsandconditions', '1'));?>
+											Agree to Terms and Conditions.
 										</label>
 										<div class="font10 text-danger">
 											<?php if(form_error('termsandconditions')) echo '*'.form_error('termsandconditions');?>
