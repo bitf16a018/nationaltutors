@@ -27,7 +27,7 @@
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 
 							<div class="section-title mb-30">
-								<h2 class="text-center">Congatulations! you're going to be a part of NationalTutors</h2>
+								<h2 class="text-center">Congatulations! you're going to be a part of National<strong>Tutors</strong></h2>
 								<p>In order to work with National<strong>Tutuors</strong> you need to complete your profile.</p>
 							</div>
 

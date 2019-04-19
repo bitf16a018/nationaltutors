@@ -15,7 +15,32 @@ class Tutor extends CI_Controller
 	{
 		if(isset($_SESSION['tutor']))
 		{
-			$this->load->view('pages/tutor_1');
+			$this->load->model('TutorPrefferedSubjects');
+			$this->load->model('TutorPrefferedAreas');
+			$this->load->model('TutorPrefferedClasses');
+			$this->load->model('TutorDocuments');
+			echo 'Classes<pre>';
+			print_r($this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result());
+			echo '</pre>';
+			echo 'Areas<pre>';
+			print_r($this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result());
+			echo '</pre>';
+			echo 'Subjects<pre>';
+			print_r($this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result());
+			echo '</pre>';
+			echo 'Documents<pre>';
+			print_r($this->TutorDocuments->get($_SESSION['tutor']['id'])->result());
+			echo '</pre>';
+
+			$preffered_classes = $this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result();
+			$preffered_areas = $this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result();
+			$preffered_subjects = $this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result();
+
+			$documents = $this->TutorDocuments->get($_SESSION['tutor']['id'])->result();
+
+			if()
+
+			$this->load->view('pages/tutor/tutor_1');
 		}
 		else
 		{
