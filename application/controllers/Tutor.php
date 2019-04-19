@@ -19,28 +19,24 @@ class Tutor extends CI_Controller
 			$this->load->model('TutorPrefferedAreas');
 			$this->load->model('TutorPrefferedClasses');
 			$this->load->model('TutorDocuments');
-			echo 'Classes<pre>';
-			print_r($this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result());
-			echo '</pre>';
-			echo 'Areas<pre>';
-			print_r($this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result());
-			echo '</pre>';
-			echo 'Subjects<pre>';
-			print_r($this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result());
-			echo '</pre>';
-			echo 'Documents<pre>';
-			print_r($this->TutorDocuments->get($_SESSION['tutor']['id'])->result());
-			echo '</pre>';
+			$this->load->model('Tutors');
 
-			$preffered_classes = $this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result();
-			$preffered_areas = $this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result();
-			$preffered_subjects = $this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result();
+			$data['preffered_classes'] = $this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result();
+			$data['preffered_areas'] = $this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result();
+			$data['preffered_subjects'] = $this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result();
 
-			$documents = $this->TutorDocuments->get($_SESSION['tutor']['id'])->result();
+			$data['acadamic_documents'] = $this->TutorDocuments->get($_SESSION['tutor']['id'])->result();
 
-			if()
+			$data['personal_documents'] = $this->Tutors->get_fields($_SESSION['tutor']['id'],'cnic_pic_path_1, cnic_pic_path_2')->result_array()[0];
 
-			$this->load->view('pages/tutor/tutor_1');
+			if(empty($data['preffered_classes']) || empty($data['preffered_areas']) || empty($data['preffered_subjects'])|| empty($data['acadamic_documents']) || empty($data['personal_documents']['cnic_pic_path_1']) || empty($data['personal_documents']['cnic_pic_path_2']))
+			{
+				$this->load->view('pages/tutor/tutor_1', $data);
+			}
+			else
+			{
+				echo 'your profile is complete and a notification has been sent to admin. he\'ll soon be in touch with you.';
+			}
 		}
 		else
 		{

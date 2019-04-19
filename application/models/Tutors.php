@@ -21,10 +21,19 @@ class Tutors extends CI_Model {
 		return $this->db->get($this->table);
 	}
 
+	public function get_fields($id, $fields)
+	{
+		$this->db->select($fields);
+		$this->db->where('id', $id);
+		return $this->db->get($this->table);
+	}
+
 	public function add($tutor)
 	{
 		$this->db->insert($this->table, $tutor);
 		return $this->db->insert_id();
 	}
+
+
 
 }

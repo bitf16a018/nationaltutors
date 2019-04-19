@@ -30,6 +30,8 @@ require_once 'template_module.php';
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url('assets/images/ico/apple-touch-icon-72-precomposed.png');?>">
 	<link rel="apple-touch-icon-precomposed" href="<?php echo base_url('assets/images/ico/apple-touch-icon-57-precomposed.png');?>">
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/ico/favicon.png');?>">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
 
 	<!-- CSS Plugins -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" media="screen">	
