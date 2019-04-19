@@ -22,7 +22,7 @@ $config = array(
 			'label' => 'Gender',
 			'rules' => 'trim|xss_clean|required',
 			'errors' => array(
-				'required' => 'You must provide a %s.',
+				'required' => 'You must provide your %s.',
 			),
 		),/*
 		array(
@@ -124,6 +124,25 @@ $config = array(
 			'rules' => 'trim|xss_clean|required|max_length[200]|min_length[20]',
 			'errors' => array(
 				'required' => 'You must provide your %s.',
+			),
+		)
+	),
+
+	'login' => array(
+		array(
+			'field' => 'email',
+			'label' => 'Email',
+			'rules' => 'trim|xss_clean|required|valid_email|max_length[50]',
+			'errors' => array(
+				'required' => 'You must provide an %s.',
+			),
+		),
+		array(
+			'field' => 'password',
+			'label' => 'Password',
+			'rules' => 'trim|xss_clean|required|min_length[8]|max_length[30]|regex_match[/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,30}$/]',
+			'errors' => array(
+				'required' => 'You must provide a %s.',
 			),
 		)
 	)/*,
