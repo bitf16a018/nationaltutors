@@ -137,19 +137,50 @@ class Tutor extends CI_Controller
 		}
 	}
 
-	// public function register_2()
-	// {
+	public function preference_info()
+	{
 
-	// 	echo 'teri id a ' . $this->tutor_database_id;
-	// 	return;
-	// 	$this->load->model("Areas");
-	// 	$this->load->model("Classes");
-	// 	$this->load->model("Subjects");
-	// 	$data['areas'] = json_encode($this->Areas->get_table()->result());
-	// 	$data['subjects'] = json_encode($this->Subjects->get_table()->result());
-	// 	$data['classes'] = json_encode($this->Classes->get_table()->result());
-	// 	$this->load->view('pages/tutor_registeration_2', $data);
-	// }
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->model("Areas");
+			$this->load->model("Classes");
+			$this->load->model("Subjects");
+			$data['areas'] = json_encode($this->Areas->get_table()->result());
+			$data['subjects'] = json_encode($this->Subjects->get_table()->result());
+			$data['classes'] = json_encode($this->Classes->get_table()->result());
+			$this->load->view('pages/tutor/preference_info_form', $data);
+		}
+		else
+		{
+			redirect(site_url('Login'));
+		}
+	}
+
+	public function personal_docs()
+	{
+
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->view('pages/tutor/personal_docs_form');
+		}
+		else
+		{
+			redirect(site_url('Login'));
+		}
+	}
+
+	public function academic_docs()
+	{
+
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->view('pages/tutor/academic_docs_form');
+		}
+		else
+		{
+			redirect(site_url('Login'));
+		}
+	}
 
 	
 	// public function register_servlet_3()

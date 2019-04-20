@@ -35,7 +35,7 @@
 			
 			<div class="container">
 
-				<h4>Tutor Registration(Personal & Account Information)</h4>
+				<h4>Tutor Registration</h4>
 
 				<div class="contact-map">
 
