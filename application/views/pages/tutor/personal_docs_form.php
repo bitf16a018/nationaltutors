@@ -29,7 +29,7 @@
 
 					<div class="row">
 
-						<?php echo form_open_multipart('Tutor/register_servlet','data-toggle="validator" class="contact-form-wrapper" id="registeration_from" method="post"');?>
+						<?php echo form_open_multipart('Tutor/personal_docs_servlet','data-toggle="validator" class="contact-form-wrapper" id="registeration_from" method="post"');?>
 
 						<div class="col-sm-12 col-md-11 col-md-offset-1 mb-30">
 							<div class="row">

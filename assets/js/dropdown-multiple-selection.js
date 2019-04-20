@@ -3,22 +3,30 @@ $(document).ready(function(){
 	var classes = $.parseJSON($("#classes-json").text());
 	var subjects = $.parseJSON($("#subjects-json").text());
 	var areas = $.parseJSON($("#areas-json").text());
-	$('#classes-multiple-dropdown').dropdown({
-		multipleMode: 'label',
-		data:classes
-	});
-	$('#subjects-multiple-dropdown').dropdown({
-		multipleMode: 'label',
-		data:subjects
-	});
-	$('#areas-multiple-dropdown').dropdown({
-		multipleMode: 'label',
-		data:areas
-	});
 	
 	$("#classes-json").remove();
 	$("#subjects-json").remove();
 	$("#areas-json").remove();
+
+
+	$('#prefered_areas').select2({
+		theme:"bootstrap",
+		data: areas,
+		placeholder: 'Select your prefered areas...'
+	});
+
+	$('#prefered_subjects').select2({
+		theme:"bootstrap",
+		data: subjects,
+		placeholder: 'Select your prefered subjects...'
+	});
+
+	$('#prefered_classes').select2({
+		theme:"bootstrap",
+		data: classes,
+		placeholder: 'Select your prefered classes...'
+	});
+
 	/******************************  attach-documents-div ***************************/
 	$("#add-more-attatchment-a").on('click',function(e){
 		e.preventDefault();

@@ -29,7 +29,7 @@
 
 					<div class="row">
 
-						<?php echo form_open_multipart('Tutor/register_servlet','data-toggle="validator" class="contact-form-wrapper" id="registeration_from" method="post"');?>
+						<?php echo form_open_multipart('Tutor/academic_docs_servlet','data-toggle="validator" class="contact-form-wrapper" id="registeration_from" method="post"');?>
 
 
 						<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
@@ -46,20 +46,8 @@
 							</div>
 
 							<div class="row">
-								<div class="col-sm-12">
-									<label>
-										<?php echo form_checkbox('termsandconditions', '1', set_checkbox('termsandconditions', '1'));?>
-										Agree to Terms and Conditions.
-									</label>
-									<div class="font10 text-danger">
-										<?php if(form_error('termsandconditions')) echo '*'.form_error('termsandconditions');?>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-sm-12">
-									<button type="submit" class="btn btn-primary btn-block mt-5">Register</button>
+								<div class="col-sm-4">
+									<button type="submit" class="btn btn-primary btn-block mt-5">Save</button>
 								</div>
 							</div>
 

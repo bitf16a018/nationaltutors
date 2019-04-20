@@ -36,14 +36,14 @@
 							</div>
 							<div class="row">
 								<div class="mt-20 col-sm-12 text-center">
-									<a href="#" class="btn btn-primary" disabled>Personal Info</a>
+									<a href="#" class="btn btn-primary">Personal Info</a>
 								</div>
 							</div>
 						</div>
 
 						<div class="col-md-3 col-sm-4 mb-20 mt-30">
 							<div class="row text-center">Preference Information
-								<?php if(empty($preffered_classes) || empty($preffered_areas) || empty($preffered_subjects)){?>
+								<?php $flag_1 = true; if(empty($preffered_classes) || empty($preffered_areas) || empty($preffered_subjects)){ $flag_1 = false;?>
 									<span class="fa fa-fw fa-close" style="color: crimson;"></span>
 								<?php }else{?>
 									<span class="fa fa-fw fa-check" style="color: #79c44e;"></span>
@@ -66,7 +66,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 text-center mt-20">
-									<a href="#" class="btn btn-primary">Personal Documents</a>
+									<a href="<?php echo site_url('Tutor/personal_docs');?>" class="btn btn-primary">Personal Documents</a>
 								</div>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 text-center mt-20">
-									<a href="#" class="btn btn-primary">Acadamic Documents</a>
+									<a href="<?php echo site_url('Tutor/academic_docs');?>" class="btn btn-primary">Acadamic Documents</a>
 								</div>
 							</div>
 						</div>

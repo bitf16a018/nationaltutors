@@ -137,7 +137,7 @@ class Tutor extends CI_Controller
 		}
 	}
 
-	public function preference_info()
+	public function preference_info($data=null)
 	{
 
 		if(isset($_SESSION['tutor']))
@@ -156,12 +156,12 @@ class Tutor extends CI_Controller
 		}
 	}
 
-	public function personal_docs()
+	public function personal_docs($data=null)
 	{
 
 		if(isset($_SESSION['tutor']))
 		{
-			$this->load->view('pages/tutor/personal_docs_form');
+			$this->load->view('pages/tutor/personal_docs_form',$data);
 		}
 		else
 		{
@@ -182,11 +182,234 @@ class Tutor extends CI_Controller
 		}
 	}
 
-	
+	public function preference_info_servlet()
+	{
+
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->helper('security');
+			$this->load->library('form_validation');
+
+
+
+			if(isset($_POST) && !empty($_POST))
+			{
+
+				/***************    start saving posted data in local variables    ******************/
+
+				$tutor_preffered_subjects = $this->input->post('subjects');
+				$tutor_preffered_classes = $this->input->post('classes');
+				$tutor_preffered_areas = $this->input->post('areas');
+
+				/***************    end saving posted data in local variables    ******************/
+				
+
+				/***************    start validating posted data    ******************/
+				
+				if(empty($tutor_preffered_subjects) || empty($tutor_preffered_classes) || empty($tutor_preffered_areas))
+				{
+					if(empty($tutor_preffered_subjects))
+					{
+						$data['subjects_error'] = '* You must provide your Prefered Subject';
+					}
+					if(empty($tutor_preffered_classes))
+					{
+						$data['classes_error'] = '* You must provide your Prefered Classes';
+					}
+					if(empty($tutor_preffered_areas))
+					{
+						$data['areas_error'] = '* You must provide your Prefered Areas';
+					}
+
+					$this->preference_info($data); //redirecting to from along with errors
+				}
+
+				/***************    end validating posted data    ******************/
+
+
+
+				/******************  start inserting tutro record in database    **********************/
+
+				$this->load->model('TutorPrefferedClasses');
+				$this->load->model('TutorPrefferedSubjects');
+				$this->load->model('TutorPrefferedAreas');
+
+				$this->TutorPrefferedClasses->insert($_SESSION['tutor']['id'], $tutor_preffered_classes);
+				$this->TutorPrefferedAreas->insert($_SESSION['tutor']['id'], $tutor_preffered_areas);
+				$this->TutorPrefferedSubjects->insert($_SESSION['tutor']['id'], $tutor_preffered_subjects);
+
+				$this->index();
+
+				/******************   end inserting tutro record in database    **********************/
+
+			}
+			else
+			{
+				$data['empty_form_error'] = '* You need to fill the fields prvided in the from.';
+				$this->preference_info($data);
+			}
+		}
+		else
+		{
+			redirect(site_url('Login'));
+		}
+	}
+
+
+	public function personal_docs_servlet()
+	{
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->library('upload');
+			$this->load->library('form_validation');
+			$this->load->helper('security');
+
+			if(isset($_FILES) && !empty($_FILES))
+			{
+				/*******************     start file uplod       ******************/
+
+				$config['upload_path']          = './tutor_assets';
+				$config['allowed_types']        = 'jpeg|jpg|png';
+				$config['max_size']             = 500;
+				$config['max_width']            = 600;
+				$config['max_height']           = 400;
+
+			//uploading CNIC frontside pic
+			$config['file_name'] =  time() . uniqid(rand());// making file name unique
+			$this->upload->initialize($config);
+			$this->upload->do_upload('cnic-pic-1');	// trying to upload CNIC front side pic
+
+			$cnic_pic_1 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
+			$cnic_pic_1_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+
+
+			//uploading CNIC backside pic
+			$config['file_name'] =  time() . uniqid(rand());// making file name unique
+			$this->upload->initialize($config);
+			$this->upload->do_upload('cnic-pic-2');	// trying to upload CNIC front side pic
+
+			$cnic_pic_2 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
+			$cnic_pic_2_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+
+			/*******************     end file uplod       ******************/
+
+			/****************** start dealing with errors in uploading files (if any) ****************/
+			if(!empty($cnic_pic_1_errors) || !empty($cnic_pic_2_errors))
+			{
+				$data['cnic_pic_1_errors'] = $cnic_pic_1_errors;
+				$data['cnic_pic_2_errors'] = $cnic_pic_2_errors;
+				$this->personal_docs($data);// reloading form with errors(got form file upload validation)
+			}/****************** end dealing with errors in uploading files (if any) ****************/
+			else
+			{
+				$this->load->model('Tutors');
+				$update_result = $this->Tutors->update($_SESSION['tutor']['id'],array(
+					'cnic_pic_path_1' => $cnic_pic_1,
+					'cnic_pic_path_2' => $cnic_pic_2
+				));
+
+				if($update_result > 0)
+				{
+					redirect(site_url('Tutor/index'));
+				}
+				else
+				{
+					echo '<h1>Something went wrong, try again by going <a href="' . site_url('Tutor/personal_docs') . '">back</a>.</h1>';
+				}
+
+			}
+			
+
+		}else{
+			$this->personal_docs();
+		}
+	}else{
+		redirect(site_url('Login'));
+	}
+}
+
+
+
+public function academic_docs_servlet()
+{
+		if(isset($_SESSION['tutor']))
+		{
+			$this->load->library('upload');
+			$this->load->library('form_validation');
+			$this->load->helper('security');
+
+			if(isset($_FILES) && !empty($_FILES))
+			{
+				/*******************     start file uplod       ******************/
+
+				echo "<pre>";
+				print_r($_FILES);
+				echo "</pre>";
+
+				/*$config['upload_path']          = './tutor_assets';
+				$config['allowed_types']        = 'jpeg|jpg|png';
+				$config['max_size']             = 500;
+				$config['max_width']            = 600;
+				$config['max_height']           = 400;
+
+			//uploading CNIC frontside pic
+			$config['file_name'] =  time() . uniqid(rand());// making file name unique
+			$this->upload->initialize($config);
+			$this->upload->do_upload('cnic-pic-1');	// trying to upload CNIC front side pic
+
+			$cnic_pic_1 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
+			$cnic_pic_1_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+
+
+			//uploading CNIC backside pic
+			$config['file_name'] =  time() . uniqid(rand());// making file name unique
+			$this->upload->initialize($config);
+			$this->upload->do_upload('cnic-pic-2');	// trying to upload CNIC front side pic
+
+			$cnic_pic_2 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
+			$cnic_pic_2_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+
+			/*******************     end file uplod       ******************/
+
+			/****************** start dealing with errors in uploading files (if any) ****************/
+			/*if(!empty($cnic_pic_1_errors) || !empty($cnic_pic_2_errors))
+			{
+				$data['cnic_pic_1_errors'] = $cnic_pic_1_errors;
+				$data['cnic_pic_2_errors'] = $cnic_pic_2_errors;
+				$this->personal_docs($data);// reloading form with errors(got form file upload validation)
+			}/****************** end dealing with errors in uploading files (if any) ****************/
+			/*else
+			{
+				$this->load->model('Tutors');
+				$update_result = $this->Tutors->update($_SESSION['tutor']['id'],array(
+					'cnic_pic_path_1' => $cnic_pic_1,
+					'cnic_pic_path_2' => $cnic_pic_2
+				));
+
+				if($update_result > 0)
+				{
+					redirect(site_url('Tutor/index'));
+				}
+				else
+				{
+					echo '<h1>Something went wrong, try again by going <a href="' . site_url('Tutor/personal_docs') . '">back</a>.</h1>';
+				}
+
+			}
+			*/
+
+		}else{
+			$this->academic_docs();
+		}
+	}else{
+		redirect(site_url('Login'));
+	}
+}
+
 	// public function register_servlet_3()
 	// {
-	// 	$this->load->library('form_validation');
 	// 	$this->load->library('upload');
+	// 	$this->load->library('form_validation');
 	// 	$this->load->helper('security');
 
 	// 	$this->form_validation->set_error_delimiters('','');

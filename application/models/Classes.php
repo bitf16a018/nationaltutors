@@ -9,10 +9,9 @@ class Classes extends CI_Model {
 
 	public function get_table()
 	{
+		$this->db->select('id, name as text');
 		return $this->db->get($this->table);
 	}
-
-	
 
 	public function get($id)
 	{

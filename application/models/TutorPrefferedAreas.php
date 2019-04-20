@@ -12,6 +12,19 @@ class TutorPrefferedAreas extends CI_Model {
 		return $this->db->get($this->table);
 	}
 
+
+	public function insert($id,$records)
+	{
+		foreach ($records as $key => $value) {
+			$data = array(
+				'area_id' => $value,
+				'tutor_id' => $id
+			);
+
+			$this->db->insert($this->table, $data);
+		}
+	}
+
 	public function get($id)
 	{
 		$this->db->where('id', $id);
