@@ -24,7 +24,7 @@ class Logout extends CI_Controller
 		}
 		else
 		{
-			$this->load->view('pages/login');
+			redirect(site_url('Home'));
 		}
 	}
 }

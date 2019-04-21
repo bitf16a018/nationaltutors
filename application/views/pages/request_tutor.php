@@ -70,7 +70,7 @@
 									</div>
 
 									<div class="col-sm-12">
-										<button type="submit" class="btn btn-primary mt-5">Send Message</button>
+										<button type="submit" class="btn btn-primary mt-5 link-style">Send Message</button>
 									</div>
 
 								</div>

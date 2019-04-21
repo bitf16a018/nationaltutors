@@ -38,7 +38,7 @@
 											
 											<div class="content">
 
-												<h3><a href="#">Alexey Barnashov</a></h3>
+												<h3><a href="#" style="color: #7db139">Alexey Barnashov</a></h3>
 												
 												<div class="tag-cloud alt-color mb-20 clearfix">
 													<a href="#" class="tag-item">Maths</a> <a href="#" class="tag-item">Physics</a> <a href="#" class="tag-item">Chemistry</a> 
@@ -55,8 +55,8 @@
 												
 												<div class="btn-wrapper">
 													
-													<button class="btn btn-primary btn-sm">Download Documents</button>
-													<button class="btn btn-primary btn-sm">Request for Tutor</button>
+													<button class="btn btn-primary btn-sm link-style">Download Documents</button>
+													<button class="btn btn-primary btn-sm link-style">Request for Tutor</button>
 													
 												</div>
 												

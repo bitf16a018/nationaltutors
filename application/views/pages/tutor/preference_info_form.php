@@ -12,8 +12,12 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/select2-bootstrap.min.css');?>">
 <style type="text/css">
 	.select2-container--bootstrap .select2-results__option[aria-selected=true] {
-		background-color: #d6d6d6;
+		background-color: #c8ef94;
 		color: black;
+	}
+	.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+		background-color: #7db139;
+		color: #fff;
 	}
 </style>
 <?php endblock();?>
@@ -86,7 +90,7 @@
 								<br>
 								<div class="row">
 									<div class="col-sm-12">
-										<button type="submit" class="btn btn-primary btn-block mt-5">Save</button>
+										<button type="submit" class="btn btn-primary btn-block mt-5 link-style">Save</button>
 									</div>
 								</div>
 

@@ -50,6 +50,19 @@ require_once 'template_module.php';
 
  <!-- Google Font -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+ <style type="text/css">
+ 	.link-style{
+ 		background-color: #7db139;
+ 		border-radius: 0px;
+ 		border-color:#7db139;
+ 	}
+ 	.link-style:hover{
+ 		background-color:#648e2d;
+ 		border-color:#648e2d;
+ 	}
+ </style>
+ 
  <?php startblock('styles');?>
  <?php endblock();?>
 </head>

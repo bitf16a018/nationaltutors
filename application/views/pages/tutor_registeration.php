@@ -261,7 +261,7 @@
 
 							<div class="row">
 								<div class="col-sm-12">
-									<button type="submit" class="btn btn-primary btn-block mt-5">Registeration</button>
+									<button type="submit" class="btn btn-primary btn-block mt-5 link-style">Get Registered</button>
 								</div>
 							</div>
 

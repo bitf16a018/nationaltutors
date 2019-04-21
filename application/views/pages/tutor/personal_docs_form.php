@@ -72,7 +72,7 @@
 								<br>
 								<div class="row">
 									<div class="col-sm-3">
-										<button type="submit" class="btn btn-primary btn-block mt-5">Save</button>
+										<button type="submit" class="btn btn-primary btn-block mt-5 link-style">Save</button>
 									</div>
 								</div>
 							</div>
