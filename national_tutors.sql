@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2019 at 07:21 PM
+-- Generation Time: Apr 21, 2019 at 02:17 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -153,8 +153,19 @@ INSERT INTO `tutor` (`id`, `name`, `email`, `fname`, `cnic`, `gender`, `cnic_pic
 CREATE TABLE `tutor_documents` (
   `id` int(11) NOT NULL,
   `tutor_id` int(11) NOT NULL,
-  `document_name` varchar(32) NOT NULL
+  `document_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tutor_documents`
+--
+
+INSERT INTO `tutor_documents` (`id`, `tutor_id`, `document_name`) VALUES
+(1, 1, '15558409292628708585cbc3fa162e5b.jpg'),
+(2, 1, '15558409295099070915cbc3fa165f07.jpg'),
+(3, 1, '155584092919756241695cbc3fa168ef8.jpg'),
+(4, 1, '155584092912156528465cbc3fa16c009.jpg'),
+(5, 1, '15558409292089233915cbc3fa16f09d.jpg');
 
 -- --------------------------------------------------------
 
@@ -312,7 +323,7 @@ ALTER TABLE `tutor`
 -- AUTO_INCREMENT for table `tutor_documents`
 --
 ALTER TABLE `tutor_documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tutor_preffered_areas`

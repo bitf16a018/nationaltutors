@@ -27,7 +27,7 @@
 
 						<div class="col-sm-6">
 							<div class="top-header-widget pull-right">
-								<a href="#" class="btn-ajax-register" data-toggle="modal">
+								<a href="<?php echo site_url('Login');?>" class="btn-ajax-register" data-toggle="modal">
 									Login
 								</a>
 							</div>

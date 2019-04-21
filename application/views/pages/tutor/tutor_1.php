@@ -27,7 +27,8 @@
 
 						<div class="section-title">
 							<h2 class="text-center">Congatulations! you're going to be a part of National<strong>Tutors</strong></h2>
-							<p>In order to work with National<strong>Tutuors</strong> you need to complete your profile.</p>
+							
+							<?php if(isset($main_message)) echo $main_message;?>
 						</div>
 
 						<div class="col-md-3 col-sm-4 mb-20 mt-30">

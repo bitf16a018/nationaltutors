@@ -28,9 +28,10 @@ $(document).ready(function(){
 	});
 
 	/******************************  attach-documents-div ***************************/
+	var upload_files_button_count = 0;
 	$("#add-more-attatchment-a").on('click',function(e){
 		e.preventDefault();
-		var input_file_button = $("<div class='form-group'><label>Attach your Documents</label><input name='attatchments[]' type='file' class='form-control-file'></div>")
+		var input_file_button = $("<div class='form-group'><label>Attach your previous dcuments</label><input name='extra_docs_" + upload_files_button_count++ + "' type='file' class='form-control-file'></div>")
 		$("#add-more-attatchment-a").before(input_file_button);
 	});
 

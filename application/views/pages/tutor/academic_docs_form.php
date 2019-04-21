@@ -28,40 +28,54 @@
 				<div class="contact-map">
 
 					<div class="row">
-
 						<?php echo form_open_multipart('Tutor/academic_docs_servlet','data-toggle="validator" class="contact-form-wrapper" id="registeration_from" method="post"');?>
 
 
-						<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
+						<div class="col-sm-6 col-md-5 mb-30">
 							<div class="row">
-
 								<div class="col-sm-6" id="attach-documents-div">
 									<div class="form-group">
-										<label>Attach your Documents</label>
-										<input name="attatchments[]" type="file" class="form-control-file" >
+										<label>Attach your Latest Degree/Transcript/Result Card</label>
+										<input name="latest-doc" type="file" class="form-control-file" >
 									</div>
 									<a href="#" id="add-more-attatchment-a" >Add more attatchment.</a>
-									<div class='font10 text-danger'></div>
-								</div>
-							</div>
 
-							<div class="row">
-								<div class="col-sm-4">
-									<button type="submit" class="btn btn-primary btn-block mt-5">Save</button>
 								</div>
-							</div>
+								<div class="col-sm-6">
 
+									<div class='font10 text-danger'>
+										<?php 
+										if(isset($file_validation_errors))
+											foreach ($file_validation_errors as $key => $value) {
+												if(!empty($value))	echo  '* ' . $value . '<br>';
+											}
+											?>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-4">
+										<button type="submit" class="btn btn-primary btn-block mt-5">Save</button>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-sm-6 col-md-5 col-md-offset-1 mb-30">
+								<h5>Important Notice!</h5>
+								<p>You are strictly required to ulpoad your latest Transcript/Degree/Result Card as academic document. You may upload your previous academic doduments as well.</p>
+								<br>
+								<span class="font10 text-danger">* Uploading irrelavent files may lead to rejection of your request even before it is made.</span>
+							</div>
 						</div>
-
 					</div>
-				</div>
 
-			</form>
+				</form>
+			</div>
+
 		</div>
 
 	</div>
-
-</div>
 
 </div>
 

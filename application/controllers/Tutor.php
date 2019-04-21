@@ -21,6 +21,9 @@ class Tutor extends CI_Controller
 			$this->load->model('TutorDocuments');
 			$this->load->model('Tutors');
 
+
+			$data['main_message'] = '<p>In order to work with National<strong>Tutuors</strong> you need to complete your profile.</p>';
+
 			$data['preffered_classes'] = $this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result();
 			$data['preffered_areas'] = $this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result();
 			$data['preffered_subjects'] = $this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result();
@@ -35,7 +38,8 @@ class Tutor extends CI_Controller
 			}
 			else
 			{
-				echo 'your profile is complete and a notification has been sent to admin. he\'ll soon be in touch with you.';
+				$data['main_message'] = '<p>Your profile is complete now! We will soon be in touch with you.</p>';
+				$this->load->view('pages/tutor/tutor_1', $data);
 			}
 		}
 		else
@@ -169,12 +173,12 @@ class Tutor extends CI_Controller
 		}
 	}
 
-	public function academic_docs()
+	public function academic_docs($data=null)
 	{
 
 		if(isset($_SESSION['tutor']))
 		{
-			$this->load->view('pages/tutor/academic_docs_form');
+			$this->load->view('pages/tutor/academic_docs_form',$data);
 		}
 		else
 		{
@@ -332,59 +336,66 @@ class Tutor extends CI_Controller
 
 public function academic_docs_servlet()
 {
-		if(isset($_SESSION['tutor']))
+	if(isset($_SESSION['tutor']))
+	{
+		$this->load->library('upload');
+		$this->load->library('form_validation');
+		$this->load->helper('security');
+
+		if(isset($_FILES) && !empty($_FILES))
 		{
-			$this->load->library('upload');
-			$this->load->library('form_validation');
-			$this->load->helper('security');
 
-			if(isset($_FILES) && !empty($_FILES))
-			{
-				/*******************     start file uplod       ******************/
+			/*******************     start file uplod       ******************/
 
-				echo "<pre>";
-				print_r($_FILES);
-				echo "</pre>";
-
-				/*$config['upload_path']          = './tutor_assets';
-				$config['allowed_types']        = 'jpeg|jpg|png';
-				$config['max_size']             = 500;
-				$config['max_width']            = 600;
-				$config['max_height']           = 400;
-
-			//uploading CNIC frontside pic
-			$config['file_name'] =  time() . uniqid(rand());// making file name unique
-			$this->upload->initialize($config);
-			$this->upload->do_upload('cnic-pic-1');	// trying to upload CNIC front side pic
-
-			$cnic_pic_1 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
-			$cnic_pic_1_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+			$config['upload_path']          = './tutor_assets';
+			$config['allowed_types']        = 'jpeg|jpg|png';
+			$config['max_size']             = 500;
+			$config['max_width']            = 600;
+			$config['max_height']           = 400;
 
 
-			//uploading CNIC backside pic
-			$config['file_name'] =  time() . uniqid(rand());// making file name unique
-			$this->upload->initialize($config);
-			$this->upload->do_upload('cnic-pic-2');	// trying to upload CNIC front side pic
+			$data['generated_file_names'] = array();
+			$data['file_validation_errors'] = array();
 
-			$cnic_pic_2 = ($this->upload->data())['file_name'];	// saving file name (that has been uploaded to server(when no error has occured))
-			$cnic_pic_2_errors = $this->upload->display_errors();	// saving errors(if any occured on uploading) array to specific variable
+			foreach ($_FILES as $key => $file) {
+				$config['file_name'] =  time() . uniqid(rand());
+				$this->upload->initialize($config);
 
-			/*******************     end file uplod       ******************/
+				$this->upload->do_upload($key);
+
+				$data['generated_file_names'][$key] = ($this->upload->data())['file_name'];
+
+				$data['file_validation_errors'][$key] = $this->upload->display_errors('','');
+
+			}
+
+			$error = false;
+
+			foreach ($data['file_validation_errors'] as $key => $value) {
+				if(!empty($data['file_validation_errors'][$key]))
+				{
+					$error = true;
+					break;
+				}
+			}
+			echo $error;
+			/*******************     end file upload       ******************/
 
 			/****************** start dealing with errors in uploading files (if any) ****************/
-			/*if(!empty($cnic_pic_1_errors) || !empty($cnic_pic_2_errors))
+			if($error == true)
 			{
-				$data['cnic_pic_1_errors'] = $cnic_pic_1_errors;
-				$data['cnic_pic_2_errors'] = $cnic_pic_2_errors;
-				$this->personal_docs($data);// reloading form with errors(got form file upload validation)
+				foreach ($data['generated_file_names'] as $key => $value) {
+					if(is_readable('./tutor_assets/' . $value))
+					{
+						unlink('./tutor_assets/' . $value);
+					}
+				}
+				$this->academic_docs($data);// reloading form with errors(got form file upload validation)
 			}/****************** end dealing with errors in uploading files (if any) ****************/
-			/*else
+			else
 			{
-				$this->load->model('Tutors');
-				$update_result = $this->Tutors->update($_SESSION['tutor']['id'],array(
-					'cnic_pic_path_1' => $cnic_pic_1,
-					'cnic_pic_path_2' => $cnic_pic_2
-				));
+				$this->load->model('TutorDocuments');
+				$update_result = $this->TutorDocuments->insert($_SESSION['tutor']['id'],$data['generated_file_names']);
 
 				if($update_result > 0)
 				{
@@ -396,7 +407,6 @@ public function academic_docs_servlet()
 				}
 
 			}
-			*/
 
 		}else{
 			$this->academic_docs();

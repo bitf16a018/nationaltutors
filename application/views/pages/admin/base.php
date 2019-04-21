@@ -16,6 +16,8 @@ require_once 'template_module.php';
 
 	<?php startblock('meta');?>
 	<?php endblock();?>
+	
+	<link rel="icon" href="<?php echo base_url('assets/images/national_tutor.ico');?>">
 
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">

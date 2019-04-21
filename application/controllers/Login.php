@@ -12,16 +12,40 @@ class Login extends CI_Controller
 	
 	public function index()
 	{
-		$this->load->view('pages/login');
+		if(isset($_SESSION['admin']))
+		{
+			redirect(site_url('AdminPanel'));
+		}
+		else if(isset($_SESSION['tutor']))
+		{
+			redirect(site_url('Tutor'));
+		}
+		else
+		{
+			$this->load->view('pages/login');
+		}
 	}
 
 	public function servlet()
-	{ 
-		$this->load->library('form_validation');
-		$this->load->library('upload');
-		$this->load->helper('security');
+	{
 
-		$this->form_validation->set_error_delimiters('','');
+
+		if(isset($_SESSION['admin']))
+		{
+			redirect(site_url('AdminPanel'));
+		}
+		else if(isset($_SESSION['tutor']))
+		{
+			redirect(site_url('Tutor'));
+		}
+		else
+		{
+
+			$this->load->library('form_validation');
+			$this->load->library('upload');
+			$this->load->helper('security');
+
+			$this->form_validation->set_error_delimiters('','');
 
 		if($this->form_validation->run('login') == false)//  if posted data is not valid
 		{
@@ -67,4 +91,5 @@ class Login extends CI_Controller
 		}
 
 	}
+}
 }

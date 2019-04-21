@@ -12,7 +12,19 @@ class Logout extends CI_Controller
 	public function index()
 	{
 		
-		unset($_SESSION['tutor']);
-		redirect(site_url('Home'));
+		if(isset($_SESSION['admin']))
+		{
+			unset($_SESSION['admin']);
+			redirect(site_url('Home'));
+		}
+		else if(isset($_SESSION['tutor']))
+		{
+			unset($_SESSION['tutor']);
+			redirect(site_url('Home'));
+		}
+		else
+		{
+			$this->load->view('pages/login');
+		}
 	}
 }
