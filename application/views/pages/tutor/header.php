@@ -12,6 +12,7 @@
 				<div class="row">
 
 					<div class="col-sm-12">
+						
 						<div class="top-header-widget pull-right">
 							<?php if(isset($_SESSION['tutor'])){?>
 								<a href="<?php echo site_url('Logout');?>">
@@ -22,6 +23,14 @@
 									Login
 								</a>
 							<?php } ?>
+						</div>
+
+						<div class="top-header-widget pull-right">
+							<?php if(isset($_SESSION['tutor'])){?>
+								<a href="<?php echo site_url('Tutor');?>">
+									<?php echo $_SESSION['tutor']['name']; ?>
+								</a>
+							<?php }?>
 						</div>
 
 					</div>

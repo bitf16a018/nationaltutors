@@ -16,10 +16,10 @@
       <li class="header">MAIN NAVIGATION</li>
 
       <li>
-        <a href="pages/widgets.html">
+        <a href="<?php echo site_url("AdminPanel/view_tutor_requests");?>">
           <i class="fa fa-leaf"></i> <span>Tutor Requests</span>
           <span class="pull-right-container">
-            <small class="label pull-right bg-green">2</small>
+            <small class="label pull-right bg-green"><?php if(isset($tutor_requests_count) && $tutor_requests_count > 0) echo $tutor_requests_count; ?></small>
           </span>
         </a>
       </li>

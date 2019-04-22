@@ -24,11 +24,11 @@ class Tutor extends CI_Controller
 
 			$data['main_message'] = '<p>In order to work with National<strong>Tutuors</strong> you need to complete your profile.</p>';
 
-			$data['preffered_classes'] = $this->TutorPrefferedClasses->get($_SESSION['tutor']['id'])->result();
-			$data['preffered_areas'] = $this->TutorPrefferedAreas->get($_SESSION['tutor']['id'])->result();
-			$data['preffered_subjects'] = $this->TutorPrefferedSubjects->get($_SESSION['tutor']['id'])->result();
+			$data['preffered_classes'] = $this->TutorPrefferedClasses->get_where('tutor_id',$_SESSION['tutor']['id'])->result();
+			$data['preffered_areas'] = $this->TutorPrefferedAreas->get_where('tutor_id',$_SESSION['tutor']['id'])->result();
+			$data['preffered_subjects'] = $this->TutorPrefferedSubjects->get_where('tutor_id',$_SESSION['tutor']['id'])->result();
 
-			$data['acadamic_documents'] = $this->TutorDocuments->get($_SESSION['tutor']['id'])->result();
+			$data['acadamic_documents'] = $this->TutorDocuments->get_where('tutor_id',$_SESSION['tutor']['id'])->result();
 
 			$data['personal_documents'] = $this->Tutors->get_fields($_SESSION['tutor']['id'],'cnic_pic_path_1, cnic_pic_path_2')->result_array()[0];
 
@@ -39,7 +39,8 @@ class Tutor extends CI_Controller
 			else
 			{
 
-				$data['main_message'] = '<p>Your have completed you profile! We will soon be in touch with you.</p>';
+				$data['main_message'] = 'You have completed your profile! We will soon be in touch with you.';
+				$data['alert_message'] = $data['main_message'];
 				/**************  start placing request in database    ************/
 				$this->load->model('TutorRequests');
 				if(empty($this->TutorRequests->get_where('tutor_id',$_SESSION['tutor']['id'])->result_array()))
@@ -271,25 +272,27 @@ class Tutor extends CI_Controller
 					}
 
 					$this->preference_info($data); //redirecting to from along with errors
+					/***************    end validating posted data    ******************/
 				}
+				else
+				{
 
-				/***************    end validating posted data    ******************/
 
 
 
-				/******************  start inserting tutro record in database    **********************/
+					/******************  start inserting tutro record in database    **********************/
 
-				$this->load->model('TutorPrefferedClasses');
-				$this->load->model('TutorPrefferedSubjects');
-				$this->load->model('TutorPrefferedAreas');
+					$this->load->model('TutorPrefferedClasses');
+					$this->load->model('TutorPrefferedSubjects');
+					$this->load->model('TutorPrefferedAreas');
 
-				$this->TutorPrefferedClasses->insert($_SESSION['tutor']['id'], $tutor_preffered_classes);
-				$this->TutorPrefferedAreas->insert($_SESSION['tutor']['id'], $tutor_preffered_areas);
-				$this->TutorPrefferedSubjects->insert($_SESSION['tutor']['id'], $tutor_preffered_subjects);
+					$this->TutorPrefferedClasses->insert($_SESSION['tutor']['id'], $tutor_preffered_classes);
+					$this->TutorPrefferedAreas->insert($_SESSION['tutor']['id'], $tutor_preffered_areas);
+					$this->TutorPrefferedSubjects->insert($_SESSION['tutor']['id'], $tutor_preffered_subjects);
 
-				$this->index();
-
-				/******************   end inserting tutro record in database    **********************/
+					/******************   end inserting tutro record in database    **********************/
+					redirect(site_url('Tutor/index'));
+				}
 
 			}
 			else

@@ -25,10 +25,22 @@
 
 					<div class="col-sm-12">
 
+
+						<div class="row">
+							<?php if(isset($alert_message)){?>
+
+								<div class="alert alert-success alert-dismissible">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									<strong>Hurrah!</strong> <?php echo $alert_message;?>
+								</div>
+
+							<?php }?>
+						</div>
+
 						<div class="section-title">
 							<h2 class="text-center">Congatulations! you're going to be a part of National<strong>Tutors</strong></h2>
 							
-							<?php if(isset($main_message)) echo $main_message;?>
+							<?php if(isset($main_message)) echo '<p>' . $main_message . '</p>';?>
 						</div>
 
 						<div class="col-md-3 col-sm-4 mb-20 mt-30">
