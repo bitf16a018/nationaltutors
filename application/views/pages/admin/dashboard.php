@@ -35,7 +35,7 @@
             <div class="icon">
               <i class="fa fa-leaf"></i> 
             </div>
-            <a href="#" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo site_url('AdminPanel/view_tutor_requests');?>" class="small-box-footer">View <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

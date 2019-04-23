@@ -34,7 +34,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <table id="tutor-requests-table" class="table table-bordered table-striped">
-                <thead>
+               <thead>
                   <tr>
                     <th>Requestee Name</th>
                     <th>Requestee Email</th>
@@ -44,6 +44,8 @@
                     <th>Reason</th>
                   </tr>
                 </thead>
+                <tbody>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
@@ -55,8 +57,11 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-    <div id="tutor-requests-data" style="display: block;">
+    <div id="tutor-requests-data-div" style="display: none;">
       <?php if(isset($tutor_requests)) echo $tutor_requests;?>
+    </div>
+    <div id="site-url-div" style="display: none;">
+      <?php echo site_url();?>
     </div>
 
 
@@ -66,7 +71,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2016 <a href="#">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
   <?php include 'side_control_bar.php' ?>
