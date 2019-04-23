@@ -14,6 +14,12 @@ class Tutors extends CI_Model {
 
 	
 
+	public function get_where($field_name, $field_value)
+	{
+		$this->db->where($field_name, $field_value);
+		return $this->db->get($this->table);
+	}
+
 	public function get_login($email, $password)
 	{
 		$this->db->where('email', $email);

@@ -13,12 +13,11 @@ $(document).ready(function() {
 		{
 			"mData": "name",
 			"mRender": function(data, type, row){
-				return "<a href='" + $.trim(site_url) +"/AdminPanel/tutor_profile/" + data.id + "'>" + data + "</a>";
+				return "<a href='" + $.trim(site_url) +"/AdminPanel/tutor_profile/" + row['tutor_id'] + "'>" + data + "</a>";
 			}
 		},
 		{ "data" : "email" },
 		{ "data" : "date_of_request" },
-		{ "data" : "date_of_response" },
 		{
 			"mData": "request_status",
 			"mRender": function(data, type, row){
@@ -30,7 +29,6 @@ $(document).ready(function() {
 					return "<span class='label label-danger' style='font-size:10pt;'>" + data + "</span>";
 			}
 		},
-		{ "data" : "reason" },
 		]
 	});
 

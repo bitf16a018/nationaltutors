@@ -33,4 +33,12 @@ class TutorRequests extends CI_Model {
 		// echo $this->db->get_compiled_select();die();
 		return $this->db->get();
 	}
+
+	public function update($tutor_id, $data)
+	{
+		$this->db->set($data);
+		$this->db->where('tutor_id',$tutor_id);
+		$this->db->update($this->table);
+		return $this->db->affected_rows();
+	}
 }
