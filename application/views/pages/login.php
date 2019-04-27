@@ -36,11 +36,11 @@
 								</div>
 
 								<div class="row">
-									<?php if(isset($login_after_register_message)){	?>
+									<?php if(isset($_GET['registered_currently'])){	?>
 
 										<div class="alert alert-success alert-dismissible">
 											<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-											<strong>Success!</strong> <?php echo $login_after_register_message;?>
+											<strong>Success!</strong> You have successfully registered to NationalTutors. You need to login to continue.
 										</div>
 
 									<?php }else if(isset($login_error)){?>

@@ -170,7 +170,7 @@ class AdminPanel extends CI_Controller {
 			$this->zip->read_file(base_url('tutor_assets/15558409295099070915cbc3fa165f07.jpg'));
 
 
-			$filename ='images.zip');
+			// $filename ='images.zip');
 
 		    // create zip file on server
 			$this->zip->archive(base_url('tutor_assets/' . $filename));

@@ -63,6 +63,7 @@
 											<input type="email" class="form-control" name="email" value="<?php echo set_value('email'); ?>">
 											<div class="font10 text-danger">
 												<?php if(form_error('email')) echo '*'.form_error('email');?>
+												<?php if(isset($error_email_already_used)) echo '*'.$error_email_already_used;?>
 											</div>
 										</div>
 									</div>

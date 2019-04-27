@@ -15,12 +15,18 @@ class Tutor extends CI_Controller
 	{
 		if(isset($_SESSION['tutor']))
 		{
+
+			$this->load->model('Tutors');
+
+			if($this->Tutors->is_approved($_SESSION['tutor']['id'])) {
+				$this->load->view('pages/tutor/approved_tutor');
+				return;
+			}
+
 			$this->load->model('TutorPrefferedSubjects');
 			$this->load->model('TutorPrefferedAreas');
 			$this->load->model('TutorPrefferedClasses');
 			$this->load->model('TutorDocuments');
-			$this->load->model('Tutors');
-
 
 			$data['main_message'] = '<p>In order to work with National<strong>Tutuors</strong> you need to complete your profile.</p>';
 
@@ -155,13 +161,21 @@ class Tutor extends CI_Controller
 
 					/******************  start inserting tutor record in database    **********************/
 					$this->load->model('Tutors');
+					// checking if email already used by some other tutor
+					if(!empty($this->Tutors->get_where('email', $tutor['email'])->result_array()))
+					{
+						$data['error_email_already_used'] = "This email is already use.";
+						$this->register($data);
+						return;
+					}
+
 
 					$last_insert_id = $this->Tutors->add($tutor);
 
 
 					if($last_insert_id > 0){
-						$data['login_after_register_message'] = 'You have successfully registered to NationalTutors. You need to login to continue.';
-						$this->load->view('pages/login',$data);
+						redirect('Login?registered_currently=true');
+						
 					}else{
 						echo '<h5>Oops! something went wrong</h5>';
 						echo 'You may <a href="' . site_url('Tutor/register') . '">Go back</a> and try again.';
