@@ -1,7 +1,22 @@
 <?php include 'base.php' ?>
 
 <?php startblock('title');?>
-<title>Tutor Register | National Tutors</title>
+<title>Find Tutor | National Tutors</title>
+<?php endblock();?>
+
+<?php startblock('styles');?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.dropdown.css');?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/select2.min.css');?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/select2-bootstrap.min.css');?>">
+<style type="text/css">
+	.select2-container .select2-selection--single .select2-selection__rendered {
+		padding: 0px;
+	}
+	.select2-container .select2-selection--single {
+		height: 40px;
+		border-radius: 0px;
+	}
+</style>
 <?php endblock();?>
 
 <?php startblock("body") ?>
@@ -30,13 +45,24 @@
 								<div class="col-sm-5">
 
 									<div class="form-group">
-										<label for="inputName">Search Criteria</label>
-										<select class="form-control">
-											<option>Subject</option>
-											<option>Class</option>
-											<option>Exprience-Level</option>
-											<option>Age</option>
-											<option>Gender</option>
+										<label for="inputName">Area</label>
+										<select id="area" class="form-control" name="area">
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
 										</select>
 									</div>
 
@@ -45,8 +71,25 @@
 								<div class="col-sm-5">
 
 									<div class="form-group">
-										<label for="inputEmail">Your Input</label>
-										<input id="inputEmail" type="email" class="form-control" data-error="Your email is required and must be a valid email address" required>
+										<label for="inputEmail">Subject</label>
+										<select id="subject" class="form-control" name="subject">
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+											<option value="AL">Alabama</option>
+											<option value="WY">Wyoming</option>
+										</select>
 									</div>
 
 								</div>
@@ -68,11 +111,211 @@
 
 				<div class="teacher-item-grid-wrapper">
 
-					<div class="GridLex-gap-20">
+					<div class="GridLex-gap-20 cont">
 
-						<div class="GridLex-grid-noGutter-equalHeight">
+						<div class="GridLex-grid-noGutter-equalHeight items-container">
 
-							<div class="GridLex-col-3_sm-4_xs-6_xss-12">
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
+
+								<div class="teacher-item-grid">
+
+									<a href="#">
+
+										<div class="image">
+											<img src="<?php echo base_url('assets/images/man/01.jpg');?>" alt="Image" />
+										</div>
+
+										<div class="content">
+											<h3>Alexey Barnashov</h3>
+											<p class="labeling">Computer Teacher</p>
+
+										</div>
+
+									</a>
+
+									<ul class="meta-list">
+										<li>He have taught <span class="text-danger font700">12 courses</span></li>
+									</ul>
+
+								</div>
+
+							</div>
+							<div class="GridLex-col-3_sm-4_xs-6_xss-12 single-item">
 
 								<div class="teacher-item-grid">
 
@@ -98,7 +341,6 @@
 
 							</div>
 
-							
 						</div>
 
 					</div>
@@ -120,4 +362,9 @@
 <!-- end Container Wrapper -->
 
 
+<?php endblock();?>
+<?php startblock('scripts');?>
+<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dropdown.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/select2.full.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/find_tutor_select2.js');?>"></script>
 <?php endblock();?>
