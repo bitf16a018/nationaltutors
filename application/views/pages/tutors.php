@@ -52,7 +52,7 @@
 								</div>
 
 								<div class="col-sm-2">
-									<button type="submit" style="margin-top: 25px; border: none; background-color: rgb(13,124,201); color: white; padding-left: 20px; padding-right: 20px; padding-top: 7px;padding-bottom: 7px;">Search</button>
+									<button type="submit" class="btn btn-primary mt-10 link-style">Search</button>
 								</div>
 
 							</div>

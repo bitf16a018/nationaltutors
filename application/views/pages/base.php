@@ -35,6 +35,17 @@ require_once 'template_module.php';
 
 	<!-- CSS Custom -->
 	<link href="<?php echo base_url('assets/css/style.css');?>" rel="stylesheet">
+	<style type="text/css">
+		.link-style{
+			background-color: #7db139;
+			border-radius: 0px;
+			border-color:#7db139;
+		}
+		.link-style:hover{
+			background-color:#648e2d;
+			border-color:#648e2d;
+		}
+	</style>
 	<?php startblock('styles');?>
 	<?php endblock();?>
 </head>

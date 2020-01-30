@@ -32,10 +32,10 @@
 							</div>
 
 							<div class="col-sm-6 text-center mt-40">
-								<a href="#" class="btn btn-primary">Become a tutor</a>
+								<a href="#" class="btn btn-primary link-style">Become a tutor</a>
 							</div>
 							<div class="col-sm-6 text-center mt-40">
-								<a href="#" class="btn btn-primary">Find a tutor</a>
+								<a href="#" class="btn btn-primary link-style">Find a tutor</a>
 							</div>
 							
 						</div>

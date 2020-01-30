@@ -28,7 +28,7 @@
 							<div class="col-sm-4">
 
 								<div class="row" style="margin-bottom: 50px;">
-										<div class="navbar-header col-sm-12">
+										<div class="navbar-header col-sm-12" style="padding: 0px;">
 											<a class="navbar-brand col-sm-12" style="padding:0px" href="<?php echo site_url('Home')?>">
 												<img class="center-block img-responsive" style="width: 200px;" src="<?php echo base_url('assets/images/national_tutors_logo_small.png');?>">
 											</a>
@@ -36,11 +36,11 @@
 								</div>
 
 								<div class="row">
-									<?php if(isset($login_after_register_message)){	?>
+									<?php if(isset($_GET['registered_currently'])){	?>
 
 										<div class="alert alert-success alert-dismissible">
 											<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-											<strong>Success!</strong> <?php echo $login_after_register_message;?>
+											<strong>Success!</strong> You have successfully registered to NationalTutors. You need to login to continue.
 										</div>
 
 									<?php }else if(isset($login_error)){?>
@@ -79,7 +79,7 @@
 
 								<div class="row">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #7db139; border-color:#7db139; border-radius: 0px" value="Login">
+										<input type="submit" class="btn btn-primary btn-lg btn-block link-style" value="Login">
 									</div>
 								</div>
 

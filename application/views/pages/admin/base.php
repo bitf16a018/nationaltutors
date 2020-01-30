@@ -17,7 +17,7 @@ require_once 'template_module.php';
 	<?php startblock('meta');?>
 	<?php endblock();?>
 	
-	<link rel="icon" href="<?php echo base_url('assets/images/national_tutor.ico');?>">
+	<link rel="icon" href="<?php echo base_url('assets/images/NationalTutors01.png');?>">
 
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
@@ -40,6 +40,8 @@ require_once 'template_module.php';
   	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') ?>">
   	<!-- bootstrap wysihtml5 - text editor -->
   	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>">
+  	<!-- DataTables -->
+  	<link rel="stylesheet" href="<?php echo base_url('assets/admin_assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') ?>">
 
   	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,6 +52,19 @@ require_once 'template_module.php';
 
  <!-- Google Font -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+ <style type="text/css">
+ 	.link-style{
+ 		background-color: #7db139;
+ 		border-radius: 0px;
+ 		border-color:#7db139;
+ 	}
+ 	.link-style:hover{
+ 		background-color:#648e2d;
+ 		border-color:#648e2d;
+ 	}
+ </style>
+ 
  <?php startblock('styles');?>
  <?php endblock();?>
 </head>
@@ -93,6 +108,9 @@ require_once 'template_module.php';
 	<script src="<?php echo base_url('assets/admin_assets/dist/js/pages/dashboard.js') ?>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?php echo base_url('assets/admin_assets/dist/js/demo.js') ?>"></script>
+	<!-- DataTables -->
+	<script src="<?php echo base_url('assets/admin_assets/bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/admin_assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
 
 	<?php startblock('scripts');?>
 	<?php endblock();?>

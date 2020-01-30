@@ -12,7 +12,19 @@ class Tutors extends CI_Model {
 		return $this->db->get($this->table);
 	}
 
-	
+	public function get_where($field_name, $field_value)
+	{
+		$this->db->where($field_name, $field_value);
+		return $this->db->get($this->table);
+	}
+
+	public function is_approved($id)
+	{
+		$this->db->select("status");
+		$this->db->where("id", $id);
+		$this->db->where("status", "approved");
+		return !empty($this->db->get($this->table)->result_array());
+	}
 
 	public function get_login($email, $password)
 	{

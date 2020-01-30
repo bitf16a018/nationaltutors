@@ -12,9 +12,9 @@ class TutorDocuments extends CI_Model {
 		return $this->db->get($this->table);
 	}
 
-	public function get($id)
+	public function get_where($field_name, $field_value)
 	{
-		$this->db->where('id', $id);
+		$this->db->where($field_name, $field_value);
 		return $this->db->get($this->table);
 	}
 

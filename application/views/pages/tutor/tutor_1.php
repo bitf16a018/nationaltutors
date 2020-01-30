@@ -25,10 +25,22 @@
 
 					<div class="col-sm-12">
 
+
+						<div class="row">
+							<?php if(isset($alert_message)){?>
+
+								<div class="alert alert-success alert-dismissible">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									<strong>Hurrah!</strong> <?php echo $alert_message;?>
+								</div>
+
+							<?php }?>
+						</div>
+
 						<div class="section-title">
 							<h2 class="text-center">Congatulations! you're going to be a part of National<strong>Tutors</strong></h2>
 							
-							<?php if(isset($main_message)) echo $main_message;?>
+							<?php if(isset($main_message)) echo '<p>' . $main_message . '</p>';?>
 						</div>
 
 						<div class="col-md-3 col-sm-4 mb-20 mt-30">
@@ -37,7 +49,7 @@
 							</div>
 							<div class="row">
 								<div class="mt-20 col-sm-12 text-center">
-									<a href="#" class="btn btn-primary">Personal Info</a>
+									<a href="#" class="btn btn-primary link-style">Personal Info</a>
 								</div>
 							</div>
 						</div>
@@ -52,7 +64,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 text-center mt-20">
-									<a href="<?php echo site_url('Tutor/preference_info');?>" class="btn btn-primary">Preference Info</a>
+									<a href="<?php echo site_url('Tutor/preference_info');?>" class="btn btn-primary link-style">Preference Info</a>
 								</div>
 							</div>
 						</div>
@@ -67,7 +79,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 text-center mt-20">
-									<a href="<?php echo site_url('Tutor/personal_docs');?>" class="btn btn-primary">Personal Documents</a>
+									<a href="<?php echo site_url('Tutor/personal_docs');?>" class="btn btn-primary link-style">Personal Documents</a>
 								</div>
 							</div>
 						</div>
@@ -83,7 +95,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 text-center mt-20">
-									<a href="<?php echo site_url('Tutor/academic_docs');?>" class="btn btn-primary">Acadamic Documents</a>
+									<a href="<?php echo site_url('Tutor/academic_docs');?>" class="btn btn-primary link-style">Acadamic Documents</a>
 								</div>
 							</div>
 						</div>

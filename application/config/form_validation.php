@@ -4,7 +4,7 @@ $config = array(
 		array(
 			'field' => 'name',
 			'label' => 'Name',
-			'rules' => 'trim|xss_clean|required|min_length[3]|regex_match[/^([a-zA-Z-_ ])+$/i]|max_length[50]',
+			'rules' => 'trim|xss_clean|required|min_length[3]|regex_match[/^([a-zA-Z- ])+$/i]|max_length[50]',
 			'errors' => array(
 				'required' => 'You must provide a %s.',
 			),
@@ -12,7 +12,7 @@ $config = array(
 		array(
 			'field' => 'fname',
 			'label' => 'Father\'s Name',
-			'rules' => 'trim|xss_clean|required|min_length[3]|regex_match[/^([a-zA-Z-_ ])+$/i]|max_length[50]',
+			'rules' => 'trim|xss_clean|required|min_length[3]|regex_match[/^([a-zA-Z- ])+$/i]|max_length[50]',
 			'errors' => array(
 				'required' => 'You must provide your %s.',
 			),
